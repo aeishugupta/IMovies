@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-plum-900 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-blush-300 text-plum-900;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-rose-gradient bg-[length:200%_200%] px-7 py-3 font-semibold text-white shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:scale-[1.03] active:scale-95 animate-gradient-x;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-blush-300/60 bg-white/40 px-7 py-3 font-semibold text-plum-800 backdrop-blur-md transition-all duration-300 hover:border-blush-400 hover:bg-white/70 hover:scale-[1.03] active:scale-95;
+  }
+
+  .btn-soft {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-mauve-100 px-5 py-2.5 text-sm font-semibold text-plum-700 transition-all duration-300 hover:bg-mauve-200 hover:scale-[1.03] active:scale-95;
+  }
+
+  .glass {
+    @apply border border-white/40 bg-white/60 backdrop-blur-xl shadow-soft;
+  }
+
+  .glass-dark {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-300;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-blush-200 bg-white/80 px-4 py-3 text-plum-900 placeholder:text-mauve-400 transition-all duration-300 focus:border-blush-400 focus:outline-none focus:ring-2 focus:ring-blush-300/50;
+  }
+}
+
+@layer utilities {
+  .text-gradient-rose {
+    @apply bg-clip-text text-transparent bg-rose-gradient;
+  }
+  .text-gradient-romance {
+    @apply bg-clip-text text-transparent bg-romance bg-[length:200%_auto] animate-gradient-x;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, #f3e9ee 25%, #ffeaf2 37%, #f3e9ee 63%);
+    background-size: 400% 100%;
+    @apply animate-shimmer;
+  }
+}
